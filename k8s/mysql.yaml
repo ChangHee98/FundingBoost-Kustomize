@@ -16,7 +16,7 @@ spec:
       containers:
         - name: mysql
           # 여러분의 mariadb image 주소를 입력해주세요.
-          image: mysql:8.0.3
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_5f58a1067974
           env:
             - name: TZ
               value: Asia/Seoul
