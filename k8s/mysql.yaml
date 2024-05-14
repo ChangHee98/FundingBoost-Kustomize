@@ -17,17 +17,20 @@ spec:
         - name: mysql
           # 여러분의 mariadb image 주소를 입력해주세요.
           image: krmp-d2hub-idock.9rum.cc/dev-test/repo_5f58a1067974
+          imagePullPolicy: Always
           env:
             - name: TZ
               value: Asia/Seoul
             - name: MYSQL_ROOT_PASSWORD
               value: root
+            - name: MYSQLDB_DATABASE
+              value: fundingboost
+            - name: MYSQLDB_DISABLE_UPGRADE_BACKUP
+              value: '1'
           volumeMounts:
             - mountPath: /var/lib/mysql
               name: data
               subPath: mysql
-            - mountPath: /docker-entrypoint-initdb.d
-              name: init-db
           resources:
             limits:
               memory: 1Gi
@@ -36,8 +39,6 @@ spec:
               port: 3306
       volumes:
         - name: init-db
-          configMap:
-            name: init-db
   volumeClaimTemplates:
     - metadata:
         name: data
