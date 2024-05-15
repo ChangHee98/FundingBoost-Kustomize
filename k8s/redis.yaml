@@ -1,4 +1,3 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,6 +16,13 @@ spec:
           image: krmp-d2hub-idock.9rum.cc/dev-test/repo_be607ad150b0
           ports:
             - containerPort: 6379
+          volumeMounts:
+            - name: config-volume
+              mountPath: /usr/local/etc/redis
+      volumes:
+        - name: config-volume
+          configMap:
+            name: redis-configmap
 ---
 apiVersion: v1
 kind: Service
