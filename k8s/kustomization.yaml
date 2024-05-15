@@ -5,3 +5,7 @@ resources:
   - backend.yaml
   - frontend.yaml
   - redis.yaml
+configMapGenerator:
+  - name: redis-configmap
+    files:
+      - config/redis.conf
