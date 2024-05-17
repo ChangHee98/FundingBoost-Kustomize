@@ -21,16 +21,16 @@ spec:
           env:
             - name: TZ
               value: Asia/Seoul
-            - name: MYSQL_ROOT_PASSWORD
+            - name: MARIADB_ROOT_PASSWORD
               value: root
-            - name: MYSQL_DATABASE
+            - name: MARIADB_DATABASE
               value: fundingboost
-            - name: MYSQL_DISABLE_UPGRADE_BACKUP
+            - name: MARIADB_DISABLE_UPGRADE_BACKUP
               value: '1'
           volumeMounts:
-            - mountPath: /var/lib/mariadb
+            - mountPath: /var/lib/mysql
               name: data
-              subPath: mariadb
+              subPath: mysql
           resources:
             limits:
               memory: 1Gi
