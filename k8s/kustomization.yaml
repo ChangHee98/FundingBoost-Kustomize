@@ -5,6 +5,9 @@ resources:
   - backend.yaml
   - frontend.yaml
   - redis.yaml
+  # - node-exporter-daemonset.yaml
+  - prometheus-configmap.yaml
+  - prometheus-deployment.yaml
 configMapGenerator:
   - name: redis-configmap
     files:

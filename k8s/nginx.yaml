@@ -20,3 +20,8 @@ spec:
             backend:
               serviceName: frontend
               servicePort: 3000
+          - path: /
+            pathType: Prefix
+            backend:
+              serviceName: prometheus-service
+              servicePort: 9090
