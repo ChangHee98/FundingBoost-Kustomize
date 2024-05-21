@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: prometheus
-        image: krmp-d2hub-idock.9rum.cc/dev-test/repo_ce36dbc997ee
+        image: krmp-d2hub-idock.9rum.cc/dev-test/repo_895361872c65
         args:
           - "--config.file=/etc/prometheus/prometheus.yml"
         ports:
