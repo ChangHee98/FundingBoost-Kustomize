@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: redis
-          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_9493aa4f0021
+          image: krmp-d2hub-idock.9rum.cc/dev-test/repo_44acbae2002d
           ports:
             - containerPort: 6379
           volumeMounts:
